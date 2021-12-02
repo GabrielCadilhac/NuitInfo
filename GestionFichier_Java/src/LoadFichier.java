@@ -23,20 +23,23 @@ public class LoadFichier {
 
 		}
 		public PriorityQueue<Fichier> loader(File f) throws IOException{
-			boolean isFinish=true;
+		
 			PriorityQueue<Fichier> listF = new PriorityQueue<>(new FichierComparator());
-			while(isFinish) {
+			
+				
 				for(File f1 : f.listFiles()) {
-					 listF.add(new Fichier(f1));
-				}
-				else {
-					Fichier fic = new Fichier(f1);
-					listF.add(fic);
-					loadIco(f1);
+					if(f1.isDirectory())
+					 listF.addAll(loader(f1));
+					else {
+						Fichier fic = new Fichier(f1);
+						listF.add(fic);
+						loadIco(f1);
 
+					}
 				}
+			
 
-			}
+			
 
 
 
