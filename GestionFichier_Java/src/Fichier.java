@@ -1,6 +1,7 @@
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.Date;
 
 import javax.swing.Icon;
@@ -33,6 +34,14 @@ public class Fichier {
 		
 	}
 	
+	public Date getDate() {
+		return this.dateLOpened;
+	}
+	
+	public String getNom() {
+		return this.nomF;
+	}
+	
 	public Date getLastAcces(File f) throws IOException {
 		 BasicFileAttributes attrs = Files.readAttributes(f.toPath(), BasicFileAttributes.class);
 		 return new Date(attrs.lastAccessTime().toMillis());
@@ -49,7 +58,27 @@ public class Fichier {
 		return null;
 	}
 	
+class FichierComparator implements Comparator<Fichier> {
+
+	@Override
+	public int compare(Fichier o1, Fichier o2) {
+		if (o1 == o2) {
+            return 0;
+        }
+        if (o1 == null) {
+            return -1; // o1 < o2
+        }
+        if (o2 == null) {
+            return 1; // o1 > o2
+        }
+        int s = o1.getDate().compareTo(o2.getDate());
+        if (s != 0) {
+            return s;
+        }
+        return o1.getNom().compareTo(o2.getNom());
+	}
 	
+}
 	
 	
 	

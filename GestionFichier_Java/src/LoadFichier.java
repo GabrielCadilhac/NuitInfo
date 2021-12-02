@@ -1,12 +1,13 @@
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 public class LoadFichier {
 
 	
 		
-	ArrayList<Fichier> listFichier = new ArrayList();
+	PriorityQueue<Fichier> listFichier = new PriorityQueue();
 	
 	
 		public LoadFichier(String path) throws IOException {
@@ -17,9 +18,9 @@ public class LoadFichier {
 				
 			
 		}
-		public ArrayList<Fichier> loader(File f) throws IOException{
+		public PriorityQueue<Fichier> loader(File f) throws IOException{
 			boolean isFinish=true;
-			ArrayList<Fichier> listF = new ArrayList();
+			PriorityQueue<Fichier> listF = new PriorityQueue();
 			while(isFinish) {
 				for(File f1 : f.listFiles()) {
 					 listF.add(new Fichier(f1));
