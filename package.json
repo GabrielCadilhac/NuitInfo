@@ -19,6 +19,7 @@
   "homepage": "https://github.com/GabrielCadilhac/NuitInfo#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "http": "^0.0.1-security"
+    "http": "^0.0.1-security",
+    "pug": "^3.0.2"
   }
 }
