@@ -7,7 +7,7 @@ public class LoadFichier {
 
 	
 		
-	PriorityQueue<Fichier> listFichier = new PriorityQueue();
+	PriorityQueue<Fichier> listFichier = new PriorityQueue<>(new FichierComparator());
 	
 	
 		public LoadFichier(String path) throws IOException {
@@ -20,7 +20,7 @@ public class LoadFichier {
 		}
 		public PriorityQueue<Fichier> loader(File f) throws IOException{
 			boolean isFinish=true;
-			PriorityQueue<Fichier> listF = new PriorityQueue();
+			PriorityQueue<Fichier> listF = new PriorityQueue<>(new FichierComparator());
 			while(isFinish) {
 				for(File f1 : f.listFiles()) {
 					 listF.add(new Fichier(f1));
@@ -34,7 +34,7 @@ public class LoadFichier {
 			LoadFichier test = new LoadFichier("D:\\NUIT DE LINFO");
 			for(Fichier f : test.listFichier)
 			{
-				System.out.println(f.nomF);
+				System.out.println(f.nomF+" "+f.dateLOpened);
 			}
 			
 		}

@@ -1,11 +1,13 @@
-import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 import java.util.Comparator;
 import java.util.Date;
 
 import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.filechooser.FileSystemView;
+
+import javafx.scene.image.Image;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -28,7 +30,7 @@ public class Fichier {
 		this.dateLOpened=getLastAcces(f);
 		this.type=getTypeFile(this.nomF);
 		this.path=f.getAbsolutePath();
-		this.icone=FileSystemView.getFileSystemView().getSystemIcon( f );
+		this.icone= FileSystemView.getFileSystemView().getSystemIcon( f );
 		this.isFav=false;
 		this.note=0;
 		
@@ -38,7 +40,16 @@ public class Fichier {
 		return this.dateLOpened;
 	}
 	
+	public int getNote() {
+		return this.note;
+	}
+	
 	public String getNom() {
+		return this.nomF;
+	}
+	
+	@Override
+	public String toString() {
 		return this.nomF;
 	}
 	
@@ -57,30 +68,4 @@ public class Fichier {
 		}
 		return null;
 	}
-	
-class FichierComparator implements Comparator<Fichier> {
-
-	@Override
-	public int compare(Fichier o1, Fichier o2) {
-		if (o1 == o2) {
-            return 0;
-        }
-        if (o1 == null) {
-            return -1; // o1 < o2
-        }
-        if (o2 == null) {
-            return 1; // o1 > o2
-        }
-        int s = o1.getDate().compareTo(o2.getDate());
-        if (s != 0) {
-            return s;
-        }
-        return o1.getNom().compareTo(o2.getNom());
-	}
-	
-}
-	
-	
-	
-	
 }
