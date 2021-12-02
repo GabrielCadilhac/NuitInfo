@@ -56,9 +56,6 @@ public class Fichier {
 	public Date getLastAcces(File f) throws IOException {
 		 BasicFileAttributes attrs = Files.readAttributes(f.toPath(), BasicFileAttributes.class);
 		 return new Date(attrs.lastAccessTime().toMillis());
-		 
-		 
-		 
 		
 	}
 	public String getTypeFile(String fileName) {
