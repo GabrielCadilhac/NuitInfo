@@ -12,7 +12,6 @@ app.set('views', 'views/');
 
 
 
-
 server.listen(process.env.PORT || 80, function()
 {
         console.log("Serveur démarré");
