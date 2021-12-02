@@ -10,7 +10,7 @@ app.get("/", function(req, res) {
 
 app.use("public", express.static("public"));
 
-server.listen(process.env.PORT || 80, function()
+server.listen(process.env.PORT || 8080, function()
 {
         console.log("Serveur démarré");
 });
