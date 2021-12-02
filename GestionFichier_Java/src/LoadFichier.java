@@ -2,44 +2,44 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class LoadFichier {
 
-	
-		
-	ArrayList<Fichier> listFichier = new ArrayList();
-	
-	
+
+
+	PriorityQueue<Fichier> listFichier = new PriorityQueue<>(new FichierComparator());
+
+
 		public LoadFichier(String path) throws IOException {
 			File f=new File(path);
 			if(f.isDirectory()) {
 				listFichier=loader(f);
 				}
-				
-			
+
+
 		}
-		public ArrayList<Fichier> loader(File f) throws IOException{
-			
-			ArrayList<Fichier> listF = new ArrayList();
-			
-			for(File f1 : f.listFiles()) {
-				if(f1.isDirectory()) {
-					listF.addAll(loader(f1));
+		public PriorityQueue<Fichier> loader(File f) throws IOException{
+			boolean isFinish=true;
+			PriorityQueue<Fichier> listF = new PriorityQueue<>(new FichierComparator());
+			while(isFinish) {
+				for(File f1 : f.listFiles()) {
+					 listF.add(new Fichier(f1));
 				}
 				else {
 					Fichier fic = new Fichier(f1);
 					listF.add(fic);
 					loadIco(f1);
-					
+
 				}
-					
+
 			}
-			
-				
-			
+
+
+
 			return listF;
 		}
 	public void loadIco(File f) throws IOException{
@@ -47,20 +47,17 @@ public class LoadFichier {
 			File f2 = new File("D:\\NUIT DE LINFO\\Img\\"+fic.type+".png");
 			if(!f2.exists())
 				ImageIO.write(fic.icone, "PNG", f2);
-		
-			
-			
+
+
+
 		}
 		public static void main(String[] args) throws IOException {
 			LoadFichier test = new LoadFichier("D:\\NUIT DE LINFO");
 			for(Fichier f : test.listFichier)
 			{
-				System.out.println(f.nomF);
+				System.out.println(f.nomF+" "+f.dateLOpened);
 			}
-			
+
 		}
 
 	}
-
-
-

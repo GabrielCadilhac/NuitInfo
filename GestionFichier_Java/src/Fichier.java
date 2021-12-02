@@ -5,11 +5,14 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.Date;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.filechooser.FileSystemView;
+
+import javafx.scene.image.Image;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -24,9 +27,9 @@ public class Fichier {
 	public int note;
 	public String type;
 	public String path;
-	
-	
-	
+
+
+
 	public Fichier(File f) throws IOException {
 		this.nomF=f.getName();
 		this.dateLOpened=getLastAcces(f);
@@ -37,8 +40,8 @@ public class Fichier {
 		this.isFav=false;
 		this.note=0;
 	}
-		
-	
+
+
 	public static BufferedImage toBufferedImage(Image img)
 	{
 	    if (img instanceof BufferedImage)
@@ -46,25 +49,42 @@ public class Fichier {
 	        return (BufferedImage) img;
 	    }
 
-	  
+
 	    BufferedImage bimage = new BufferedImage(img.getWidth(null), img.getHeight(null), BufferedImage.TYPE_INT_ARGB);
 
-	   
+
 	    Graphics2D bGr = bimage.createGraphics();
 	    bGr.drawImage(img, 0, 0, null);
 	    bGr.dispose();
 
-	  
+
 	    return bimage;
 	}
-	
+
+	public Date getDate() {
+		return this.dateLOpened;
+	}
+
+	public int getNote() {
+		return this.note;
+	}
+
+	public String getNom() {
+		return this.nomF;
+	}
+
+	@Override
+	public String toString() {
+		return this.nomF;
+	}
+
 	public Date getLastAcces(File f) throws IOException {
 		 BasicFileAttributes attrs = Files.readAttributes(f.toPath(), BasicFileAttributes.class);
 		 return new Date(attrs.lastAccessTime().toMillis());
-		 
-		 
-		 
-		
+
+
+
+
 	}
 	public String getTypeFile(String fileName) {
 		int i = fileName.lastIndexOf('.');
@@ -73,10 +93,4 @@ public class Fichier {
 		}
 		return null;
 	}
-	
-	
-	
-	
-	
-	
 }
