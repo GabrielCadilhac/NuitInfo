@@ -1,0 +1,33 @@
+/*Couleur à changer*/
+
+body{
+    background-color: gray;
+}
+
+.Menu_Vectical ul{
+    list-style-type: none;
+    border-radius: 10px;
+}
+
+.Menu_Vectical {
+    width: 25vw; /*Largueur de menus*/
+}
+
+.Menu_Vectical a{
+    background-color: rgba(233, 123, 79, 0.6);
+    
+    color: white; /*Couleur du texte*/
+    display: block;
+    padding: 12px;
+}
+
+.Menu_Vectical a:hover{
+    background-color: crimson;
+}
+
+.Menu_Vectical a.Accueil {
+    background-color: rgb(92, 250, 92);
+    color: white;
+}
+
+/*Footer*/

@@ -12,7 +12,7 @@ app.set('views', 'views/');
 
 
 
-server.listen(process.env.PORT || 80, function()
+server.listen(process.env.PORT || 8080, function()
 {
         console.log("Serveur démarré");
         app.get("/", function(req, res) {

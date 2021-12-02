@@ -1,0 +1,14 @@
+/*footer*/
+
+footer * {
+    height: 15vh;
+}
+
+/*taille de l'image de facebook*/
+.icon img{
+    height: 8vh;
+}
+
+.texte_facebook{
+    font-family:cursive;
+}
