@@ -13,14 +13,13 @@ app.get("/", function(req, res) {
 
 app.get("/testbdd", function(req, res) {
     MongoClient.connect(url_db, function(err, db)
+    {
+        var dbo = db.db("sauveteurs");
+        dbo.collection("test").find({}).toArray(function(err, result)
         {
-                var dbo = db.db("sauveteurs");
-                dbo.collection("test").find({}).toArray(function(err, result)
-                {
-                        res.render("livre", {"result": result, "test": "test"});
-                        db.close();
-                });
+            db.close();
         });
+    });
 
     res.send("ui");
     res.end();
