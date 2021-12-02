@@ -17,9 +17,10 @@ const Folder = './fichier/';
 function parcourDossier(Folder){ 
 fs.readdir(Folder, (err, files) => {
   files.forEach(file => {
+      var nbAcces=0;
     //console.log(file);
     var stat = (fs.statSync(Folder+file));
-    
+
     var size = stat.size
     var date = stat.atime
     var fav=false
@@ -37,7 +38,7 @@ fs.readdir(Folder, (err, files) => {
     }
     else{
         //ajout du fichier
-        ListeFile.push({"nom":name,"size":size,"date":date,"fav":fav,"note":note,"type":type,"path":path})
+        ListeFile.push({"nom":name,"size":size,"date":date,"fav":fav,"note":note,"type":type,"path":path,"nbAcces":nbAcces})
         //console.log(name,size,date,fav,note,type,path);
         //console.log(ListeFile);
         var data=JSON.stringify(ListeFile)
@@ -48,12 +49,16 @@ fs.readdir(Folder, (err, files) => {
   })})
 
 }
+//parcourDossier(Folder);
+console.log("liste avant tir-> ",ListeFile);
+ListeFile.sort(function (a, b) {
+    return a.nbAcces - b.nbAcces;
+  });
+console.log("liste apres tir-> ",ListeFile);
 
-  //parcourDossier(Folder)
+var data=JSON.stringify(ListeFile)
+fs.writeFileSync('Liste.json', data)
 
-  //console.log('Liste -> ' ,ListeFile);
-
-  
 
 server.listen(80, function()
 {
@@ -68,4 +73,5 @@ server.listen(80, function()
         
         app.use('/views', express.static('views'));
 });
+
 
