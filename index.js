@@ -19,7 +19,7 @@ server.listen(process.env.PORT || 80, function()
    
             res.render('index')
         });
-        app.use("public", express.static("public"));
+        
         app.use('/views', express.static('views'));
 });
 
