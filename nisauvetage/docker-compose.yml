@@ -1,0 +1,23 @@
+version: "2"
+services:
+  mongodb:
+    container_name: TODO_mongodb
+    image: "mongo:4.0"
+    volumes:
+      - TODO_volume:/data/db
+  nodeserver:
+    container_name: TODO_node
+    image: "node:alpine"
+    user: "node"
+    working_dir: /home/node/app
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - "10042:8080"
+    command: "npm start"
+    links:
+      - mongodb
+
+volumes:
+  TODO_volume:
+    external: true
