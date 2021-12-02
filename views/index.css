@@ -1,4 +1,29 @@
-.container
+body
 {
     background-image: url(/views/bonsai.png);
+    background-repeat: no-repeat;
+}
+
+.row-justify-content-start
+{
+    width: 500px;
+    height: 500px;
+    top: 100px;
+    left: 100px;
+}
+
+.row-justify-content-center
+{
+    width: 500px;
+    height: 500px;
+    top: 100px;
+    left: 100px;
+}
+
+.row-align-items-end
+{
+    width: 500px;
+    height: 500px;
+    top: 100px;
+    left: 100px;
 }
