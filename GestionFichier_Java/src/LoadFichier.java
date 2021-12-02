@@ -1,6 +1,10 @@
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+
+import javax.imageio.ImageIO;
+import javax.swing.JPanel;
 
 public class LoadFichier {
 
@@ -18,16 +22,34 @@ public class LoadFichier {
 			
 		}
 		public ArrayList<Fichier> loader(File f) throws IOException{
-			boolean isFinish=true;
+			
 			ArrayList<Fichier> listF = new ArrayList();
-			while(isFinish) {
-				for(File f1 : f.listFiles()) {
-					 listF.add(new Fichier(f1));
+			
+			for(File f1 : f.listFiles()) {
+				if(f1.isDirectory()) {
+					listF.addAll(loader(f1));
 				}
-				isFinish=false;
-				
+				else {
+					Fichier fic = new Fichier(f1);
+					listF.add(fic);
+					loadIco(f1);
+					
+				}
+					
 			}
+			
+				
+			
 			return listF;
+		}
+	public void loadIco(File f) throws IOException{
+			Fichier fic= new Fichier(f);
+			File f2 = new File("D:\\NUIT DE LINFO\\Img\\"+fic.type+".png");
+			if(!f2.exists())
+				ImageIO.write(fic.icone, "PNG", f2);
+		
+			
+			
 		}
 		public static void main(String[] args) throws IOException {
 			LoadFichier test = new LoadFichier("D:\\NUIT DE LINFO");
