@@ -17,7 +17,7 @@ var app = new Vue({
 
       xhr.open("POST", "/sauveteurs", true);
       xhr.setRequestHeader("Content-Type", "application/json");
-
+      xhr.send(JSON.stringify({"search": "bruuuuh"}));
     }
   }
 });
