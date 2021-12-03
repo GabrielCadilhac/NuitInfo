@@ -13,28 +13,28 @@ html(lang=fr)
 div.container
     div(class = "row-justify-content-start")
         div(class = "Ensemble-fréquent col-4 container droppable")
-            div(class="row row-cols-4")
+            div(class="row row-cols-3 grand")
              each fichier in Data.L3
-                div(class="fichier col border border-primary btn btn-outline-primary")
-                    img(src="/views/image.svg") 
-                    p(id="nom") #{fichier.nom}
+                div(class="fichier col border border-success btn btn-outline-primary")
+                    img(src="/views/"+fichier.icon+".svg") 
+                    p(id="nom") #{fichier.nom}.#{fichier.type}
                     p.path #{fichier.path}
            
     div(class = "row-justify-content-center")
         div(class = "Ensemble-moyen col-4 container droppable")
-            div(class="row row-cols-4 moyen")
+            div(class="row row-cols-3 moyen")
              each fichier in Data.L2
-                div(class="fichier col border border-primary btn btn-outline-primary")
-                    img(src="/views/image.svg") 
-                    p(id="nom") #{fichier.nom}
+                div(class="fichier col border border-success btn btn-outline-primary")
+                    img(src="/views/"+fichier.icon+".svg") 
+                    p(id="nom") #{fichier.nom}.#{fichier.type}
                     p.path #{fichier.path}
                     
     div(class = "row-align-items-end")
         div(class = "Ensemble-petit col-4 container droppable")
-            div(class="row row-cols-2")
+            div(class="row row-cols-2 petit")
              each fichier in Data.L1
-                div(class="fichier col border border-primary btn btn-outline-primary")
-                    img(src="/views/image.svg") 
-                    p(id="nom") #{fichier.nom}
+                div(class="fichier col border border-success btn btn-outline-primary")
+                    img(src="/views/"+fichier.icon+".svg") 
+                    p(id="nom") #{fichier.nom}.#{fichier.type}
                     p.path #{fichier.path}
     
