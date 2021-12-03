@@ -8,7 +8,7 @@ var app = express();
 var server = http.createServer(app);
 
 app.get("/", function(req, res) {
-    res.sendFile(__dirname + "/index.html");
+    res.sendFile(__dirname + "/acceuil.html");
 });
 
 
