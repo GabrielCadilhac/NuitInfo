@@ -5,17 +5,17 @@ var app = new Vue({
     value_recherche: ""
   },
   methods: {
-    get_date: function () {
+    get_data: function (str) {
       xhr = new XMLHttpRequest();
 
       xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
-          answer = xhr.response;
-          console.log(xhr.response);
+          return JSON.parse(xhr.response);
+          //example pour /sauveteurs : [{"_id":str  "id":int "nom": str}]
         }
       }
-
-      xhr.open("POST", "/sauveteurs", true);
+      //  example: /sauveteurs
+      xhr.open("POST", str, true);
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.send(JSON.stringify({"search": "bruuuuh"}));
     }

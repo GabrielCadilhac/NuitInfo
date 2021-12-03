@@ -65,3 +65,11 @@ footer {
   left: 1vw;
   position: relative;
 }
+
+#pierre_tombal {
+  width: 60vw;
+  padding: 5vw 2vh;
+  background-color: grey;
+  border: solid black 2px;
+  border-radius: 30px;
+}
