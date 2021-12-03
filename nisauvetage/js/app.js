@@ -5,6 +5,18 @@ var app = new Vue({
     value_recherche: ""
   },
   methods: {
+    get_date: function () {
+      xhr = new XMLHttpRequest();
 
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          answere = xhr.response;
+        }
+      }
+
+      xhr.open("POST", "/sauveteurs", true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+
+    }
   }
 });

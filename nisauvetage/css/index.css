@@ -28,6 +28,7 @@ header {
   background-repeat: no-repeat;
   background-size: 100% auto;
   object-fit: none;
+  border-bottom: solid black 5px;
 }
 
 header * {
@@ -41,7 +42,6 @@ nav {
   height: calc(92vh - 2* var(--header-height));
   margin-top: 2vh;
   margin-left: 1vw;
-  /*background-color: red;*/
   position: fixed;
 }
 
