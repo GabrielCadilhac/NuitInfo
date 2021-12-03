@@ -18,10 +18,11 @@ app.post("/sauveteurs", function(req, res) {
         var dbo = db.db("sauveteurs");
         dbo.collection("sauveteurs").find({}).toArray(function(err, result)
         {
+            res.send(result);
+            res.end();
             db.close();
         });
     });
-    console.log(req.body);
 });
 
 
