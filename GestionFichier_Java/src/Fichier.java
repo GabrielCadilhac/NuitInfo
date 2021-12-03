@@ -26,6 +26,7 @@ public class Fichier {
 	public String type;
 	public String path;
 	public int hCode;
+	
 
 
 	public Fichier(File f) throws IOException {
@@ -38,6 +39,7 @@ public class Fichier {
 		this.isFav=false;
 		this.note=0;
 		this.hCode=f.hashCode();
+		
 
 	}
 

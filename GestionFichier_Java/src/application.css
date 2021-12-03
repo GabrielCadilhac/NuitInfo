@@ -29,8 +29,17 @@
     -fx-padding: 20px;
 }
 
+.hearthEmpty {
+	-fx-background-image: url('../CloudImage/heart-solid.png');
+	-fx-background-size: 20px; 
+	-fx-background-repeat: no-repeat; 
+}
 
-
+.hearthFull {
+	-fx-background-image: url('../CloudImage/heart-full.png');
+	-fx-background-size: 20px; 
+	-fx-background-repeat: no-repeat; 
+}
 
 
 
