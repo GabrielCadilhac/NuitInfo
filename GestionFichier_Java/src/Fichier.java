@@ -59,10 +59,6 @@ public class Fichier {
 	    return bimage;
 	}
 
-	public Date getDate() {
-		return this.dateLOpened;
-	}
-
 	public int getNote() {
 		return this.note;
 	}

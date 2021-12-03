@@ -8,7 +8,8 @@
     -fx-background-color: transparent;
     -fx-font-family:"Segoe UI", Helvetica, Arial, sans-serif;
     -fx-font-size: 1em; /* 12 */
-    -fx-text-fill: #828282;
+    -fx-text-fill: #FF5330;
+    -fx-font-weight: bold;
 }
 
 .button:focused {
@@ -24,7 +25,9 @@
     -fx-text-fill: white;
 }
 
-
+.cloud {
+    -fx-padding: 20px;
+}
 
 
 
