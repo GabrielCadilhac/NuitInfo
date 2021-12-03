@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Accueil - Sauveteur</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/vuesax.css">
+    <link rel="stylesheet" href="css/MenusStyle.css">
+    <link rel="stylesheet" href="css/footerStyle.css">
+    <link rel="icon" href="https://sauveteurdudunkerquois.fr/wp-content/uploads/2021/08/cropped-cropped-cropped-cropped-logo-32x32.png" sizes="any">
+  </head>
+  <body>
+    <div id="app">
+
+      <header-menu bind:value_recherche="value_recherche">
+      </header-menu>
+
+
+      <div id="align">
+        <nav-menu bind:onglet="onglet"></nav-menu>
+        <div id="corp">
+
+          <div v-show="onglet=='Acceuil'">
+            <h1>Quel dunkerquois n’a jamais lu les plaques commémoratives  apposées sur notre Leughenaer?</h1><br>
+
+            <p>Sur cette page on trouvera les sauveteurs décorés de  la Légion  d’Honneur et ou du Mérite Maritime pour services rendus.</p><br>
+            <p>La deuxième plaque apposée par les soins de la Société Humaine de Dunkerque rend hommage aux trois pilotes décédés dans le naufrage des TROIS SOEURS. La deuxième partie est un hommage à Jean-François Tixier sauveteur émérite des premières années de la société et qui perdra la vie en voulant sauver son prochain.</p><br>
+            <p>La station de Gravelines a aussi des sauveteurs qui ont été remerciés par l’attribution de la Légion d’Honneur.</p><br>
+            <p>Les légionnaires et titulaires du Mérite Maritime ont souvent été patron ou sous-patron des canots de sauvetage, patron de remorqueur, etc.</p><br>
+            <p>Ces fonctions et les défraiements qui leur sont liés ont été définis dès la création de la SCSN. Extrait du réglement ici .</p><br>
+
+            <h2>Membres fondateurs de la Société Humaine de Dunkerque</h2><br>
+
+            <div id="pierre_tombal">
+                <p v-for="i in answer">{{ i.nom }}</p>
+            </div>
+          </div>
+
+          <div v-show="onglet == 'Home'">
+            <div class="texte">
+            <p>
+            Bienvenue sur le site des sauveteurs du dunkerquois. Ce site rend hommage aux femmes,
+            hommes et enfants qui ont réalisé des actes de sauvetages en milieu aquatique.
+            Ces sauveteurs, habitants du dunkerquois (de Bray-Dunes à Grand-Fort-Philippe),
+            ont participé à plus de 900 sauvetages en mer et plus de 1100 sauvetages individuels.
+            Œuvrant avec courage, abnégation et souvent au mépris du risque ils méritent amplement que leurs actes soient pérennisés.
+            </p>
+            </div>
+            <div class="boxgrid">
+                <div class="boxlink">
+                    <div class="box">
+                        <img src="https://sauveteurdudunkerquois.fr/wp-content/uploads/2021/10/Journal-e1634902104276.png"/>
+                        <a href="" class="bouton">1910 Sauvetage du PALMA</a> <!-- ajouter le lien -->
+                    </div>
+
+                    <div class="box">
+                        <img src="https://sauveteurdudunkerquois.fr/wp-content/uploads/2021/10/Semaine-e1634902115510.png"/>
+                        <a href="" class="bouton">Golden sheaf</a> <!-- ajouter le lien -->
+                    </div>
+
+                    <div class="box">
+                        <p class="text_sujet_national">
+                            Votre site SUJET NATIONAL de la nuit de l’info 2021<br>
+                            Organisée par l’IUT de Calais<br>
+                            3650 participants France entière plus deux universités de Tunisie<br>
+                            Reçus avec Alain Ledaguenel par Rémi Synave de l’IUT de Calais<br>
+                            Bon courage aux étudiants qui vont plancher jusqu’au lever du soleil
+                        </p>
+                        <a href="" class="bouton">Sorties du mois de novembre</a> <!-- ajouter le lien -->
+                    </div>
+                </div>
+
+                <div class="imgbox"> <!-- to change mb -->
+                    <img src="https://sauveteurdudunkerquois.fr/wp-content/uploads/2021/12/Sans-titre-1-549x1024.png"/>
+                </div>
+            </div>
+          </div>
+
+          <div v-show="onglet=='Find'">
+            <div v-for="i in answer">
+              <p>{{ i }}</p>
+              <br>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <footer-menu></footer-menu>
+    </div>
+
+    <script src="js/vue.js" charset="utf-8"></script>
+    <script src="js/vuesax.min.js" charset="utf-8"></script>
+    <script src="js/component.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+    <script src="js/main.js" charset="utf-8"></script>
+  </body>
+</html>

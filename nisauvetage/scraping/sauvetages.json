@@ -1,0 +1,9 @@
+[
+    {"sauveteur": 1, "sauvees": [], "date": "1834", "description": "Pendant le désarmement du FRIEDLAND, un pont volant, qui permettait de communiquer dans le port, du bord au quai, s’était effondré sous le poids de marins qui allaient en corvée ; plus de soixante étaient tombés dans le bassin ; quatre d’entre eux furent retirés sans vie ; à lui seul, Ficquet sauva deux de ses camarades."},
+    {"sauveteur": 1, "sauvees": [], "date": "1848", "description": "Sauvetage d’un bateau pêcheur – 7 personnes sauvées"},
+    {"sauveteur": 1, "bateau": 1, "sauvees": [], "date": "1854-10-19", "description": "Sauvetage du sloop la FELICITE – Equipage sauvé. Témoignage de satisfaction Ministère de la marine : « S’est, par un mauvais temps et une grosse mer, porté, avec sept autres marins, au secours du navire naufragé la FELICITE et a puissamment contribué à sauver l’équipage de ce bâtiment composé de 5 hommes. ». Médaille d’argent Société humaine de Dunkerque"},
+    {"sauveteur": 1, "bateau": 2, "sauvees": [], "date": "1858-03-07", "description": "Sauvetage du trois-mâts barque AMIRAL MOORSON  – 14 hommes sauvés. Mention honorable SH. Médaille argent 2e classe SH et Ministre de la Marine"},
+    {"sauveteur": 1, "bateau": 3, "sauvees": [], "date": "1859-22-04", "description": "Sauvetage bateau lamaneur n° 12 –  4 hommes sauvés"},
+    {"sauveteur": 1, "bateau": 4, "sauvees": [], "date": "1867-03-17", "description": "Sauvetage de la goélette française VIRGINIE – 7 hommes sauvés"},
+    {"sauveteur": 22, "sauvees": [1], "date": "1878", "description": "Sauvetage du jeune Arthur Sapin à Condé-sur-Escaut"}
+]

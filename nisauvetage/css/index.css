@@ -1,0 +1,147 @@
+
+:root {
+  --nav-width: 20vw;
+  --header-height: 15vh;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  cursor: url(cursor1.png) 4 12, auto;
+}
+
+body {
+  background-color: yellow;
+  background-image: url(https://i.pinimg.com/originals/f2/84/d9/f284d92e418792134b31eeef1b70ae43.jpg);
+  background-repeat: no-repeat;
+  object-fit: none;
+  background-size: 120vw;
+  background-attachment: fixed;
+}
+
+header {
+  width: 100vw;
+  position: relative;
+  height: calc(2*var(--header-height));
+  top: 0px;
+  background-image: url("https://sauveteurdudunkerquois.fr/wp-content/uploads/2021/09/BANNIERE-COMPLETE-2048x679-1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  object-fit: none;
+  border-bottom: solid black 5px;
+}
+
+header * {
+  margin-left: 16vw;
+  width: 50vw;
+  top: 0.5vh;
+}
+
+nav {
+  width: var(--nav-width);
+  height: calc(92vh - 2* var(--header-height));
+  margin-top: 2vh;
+  margin-left: 1vw;
+  position: fixed;
+}
+
+#corp {
+ height: 500vh;
+ width: calc(95vw - var(--nav-width));
+ position: relative;
+ background-color: rgba(255,255,255,0.5);
+ margin-left: calc(2vw + var(--nav-width));
+ margin-bottom: calc(-1.95vh + var(--header-height)/2);
+ padding: 5%;
+ border-radius: 10px;
+ top: calc(-5vh + var(--header-height)/2);
+}
+
+footer {
+  width: 96vw;
+  height: calc(30vh - var(--header-height));
+  background-color: rgba(255,255,255,0.5);
+  bottom: 6px;
+  left: 1vw;
+  position: relative;
+}
+
+/******  lien   *******/
+.texte {
+  padding:1vh;
+  background-color:#ffffff5e;
+  border:0.25vh solid;
+  border-color: #796e6e59;
+  border-radius: 20px
+}
+
+.texte > p{
+  font-family: cursive;
+  font-size: 1.1em;
+}
+.boxgrid{
+  margin-top:5vh;
+  display: inline-flex;
+}
+
+.boxlink {
+  display: grid;
+}
+
+.box{
+  margin-left:-2vw;
+  margin-right: 2vw;
+  display: inline-grid;
+}
+.box > img{
+  border-radius: 50px;
+  border: 0.25vh solid;
+  border-color: #6e7072;
+  margin: auto;
+  display: wrap;
+}
+
+.box > a {
+  text-align: center;
+  margin: auto;
+  font-family: cursive;
+  font-size: 1.1em;
+}
+
+.bouton{
+  display: inline-block;
+  background: #c4d0d6;
+  border: 0.25vh solid;
+  border-color: #424242b0;
+  padding: 1em;
+  margin-top: 2em;
+  border-radius: 50px;
+
+  transition: all 0.2s;
+}
+
+.bouton:hover{
+  background-color: white;
+  border-radius: 15px;
+}
+
+.text_sujet_national{
+  text-align: center;
+  margin: auto;
+  font-family: cursive;
+  font-size: 1.1em;
+}
+
+.imgbox > img{
+  margin-left: 2vw;
+  border-radius: 50px;
+  border: 0.25vh solid;
+  border-color: #6e7072;
+}
+#pierre_tombal {
+  width: 60vw;
+  padding: 5vw 2vh;
+  background-color: grey;
+  border: solid black 2px;
+  border-radius: 30px;
+}
