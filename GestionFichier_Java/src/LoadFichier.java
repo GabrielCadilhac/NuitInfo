@@ -56,10 +56,16 @@ public class LoadFichier {
 		}
 		public static void main(String[] args) throws IOException {
 			LoadFichier test = new LoadFichier("D:\\NUIT DE LINFO");
+			Favoris fav = new Favoris();
+			fav=fav.load();
+			//fav.load();
 			for(Fichier f : test.listFichier)
 			{
+				//fav.setFav.add(f.hCode);
 				System.out.println(f.nomF+" "+f.dateLOpened);
 			}
+			fav.save(fav.setFav);
+			System.out.println(fav.setFav.size());
 
 		}
 

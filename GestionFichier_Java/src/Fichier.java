@@ -12,7 +12,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.filechooser.FileSystemView;
 
-import javafx.scene.image.Image;
+
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -27,7 +27,7 @@ public class Fichier {
 	public int note;
 	public String type;
 	public String path;
-
+	public int hCode;
 
 
 	public Fichier(File f) throws IOException {
@@ -39,6 +39,8 @@ public class Fichier {
 		this.icone=toBufferedImage(v.getImage());
 		this.isFav=false;
 		this.note=0;
+		this.hCode=f.hashCode();
+		
 	}
 
 
