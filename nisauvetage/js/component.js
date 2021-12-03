@@ -32,6 +32,22 @@ Vue.component("nav-menu", {
 Vue.component("footer-menu", {
   props: [""],
   template: `
-    <footer></footer>
-    `
+    <footer>
+
+        <div class="box_flex">
+            <div class="box">
+            <img src="img/facebook_icon.png"/>
+            <a href="" class="bouton">Suivez-nous sur Facebook</a>
+            </div>
+            <div class="box">
+                <img src="img/twitter.png"/>
+                <a href="" class="bouton">Suivez-nous sur Twitter</a>
+            </div>
+            <div class="box">
+                <img src="img/mail_icon.png"/>
+                <a href="" class="bouton">Suivez-nous sur Twitter</a>
+            </div>
+        </div>
+    </footer>
+  `
 });
