@@ -9,7 +9,7 @@ var server = http.createServer(app);
 
 app.set('view engine', 'pug');
 app.set('views', 'views/');
-;
+
 var ListeFile=JSON.parse(fs.readFileSync('Liste.json'))
 const Folder = './fichier/';
 
@@ -49,29 +49,39 @@ fs.readdir(Folder, (err, files) => {
   })})
 
 }
-//parcourDossier(Folder);
+
+if(ListeFile.length==0){
+  parcourDossier(Folder);
+};
+
+console.log(ListeFile.length);
+
+
+function TriDivise (ListeFille) {  
+
 //console.log("liste avant tir-> ",ListeFile);
 ListeFile.sort(function (a, b) {
-    return a.nbAcces - b.nbAcces;
-  });
+  return a.nbAcces - b.nbAcces;
+});
+var data=JSON.stringify(ListeFile)
+fs.writeFileSync('Liste.json', data)
 //console.log("liste apres tir-> ",ListeFile);
-console.log(ListeFile.lenght);
-
 var L1=ListeFile.slice(0,ListeFile.length/3);
 var L2=ListeFile.slice(ListeFile.length/3,(ListeFile.length/3)*2);
 var L3=ListeFile.slice((ListeFile.length/3)*2);
 
-console.log("Liste L1 -> ",L1);
-console.log("Liste L2 -> ",L2);
-console.log("Liste L3 -> ",L3);
+console.log("Liste L1 -> ",L1.length);
+console.log("Liste L2 -> ",L2.length);
+console.log("Liste L3 -> ",L3.length);
 
 var Data={"L1":L1,"L2":L2,"L3":L3}
-
+return Data
+}
 var data=JSON.stringify(ListeFile)
 fs.writeFileSync('Liste.json', data)
 
 //process.env.PORT, process.env.IP,
-server.listen(process.env.PORT, process.env.IP, function()
+server.listen(80, function()
 {
         
         console.log("Serveur démarré");
@@ -79,10 +89,26 @@ server.listen(process.env.PORT, process.env.IP, function()
         app.get("/", function(req, res) {
             console.log('Chargement !!');
             
-            res.render('index',{Data:Data})
+            res.render('index',{Data:TriDivise (ListeFile)})
+        });
+        app.get("/click", function(req, res) {
+            console.log('modif !!');
+            var nom=req.query.nom;
+            console.log(nom);
+            console.log(ListeFile[nom]);
+            //
+            for(var i in ListeFile){
+              
+              if (ListeFile[i].nom==nom){
+                ListeFile[i].nbAcces+=1
+                console.log('done');
+              }
+            }
+            res.render("index",{Data : TriDivise(ListeFile)})
         });
         
         app.use('/views', express.static('views'));
+        app.use('/fichier', express.static('fichier'));
 });
 
 
