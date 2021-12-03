@@ -1,6 +1,7 @@
 const http = require("http");
 const express = require("express");
 const MongoClient = require("mongodb").MongoClient;
+const { debuglog } = require("util");
 
 const url_db = "mongodb://mongodb:27017";
 
@@ -33,9 +34,15 @@ app.post("/search", function(req, res)
         var dbo = db.db("sauveteurs");
         dbo.collection("sauveteurs").find({}).toArray(function(err, result)
         {
-            res.send(result);
-            res.end();
-            db.close();
+            dbo.collection("sauvetages").find({}).toArray(function(err, result1)
+            {
+                dbo.collection("bateaux").find({}).toArray(function(err, result2)
+                {
+                    res.send(result.concat(result1).concat(result2));
+                    res.end();
+                    db.close();
+                });
+            });
         });
     });
 });
