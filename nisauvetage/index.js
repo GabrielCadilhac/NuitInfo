@@ -12,16 +12,16 @@ app.get("/", function(req, res) {
 });
 
 
-app.get("/sauveteurs", function(req, res) {
+app.post("/sauveteurs", function(req, res) {
     MongoClient.connect(url_db, function(err, db)
     {
-        console.log(req.xhr);
         var dbo = db.db("sauveteurs");
         dbo.collection("sauveteurs").find({}).toArray(function(err, result)
         {
             db.close();
         });
     });
+    console.log(req.body);
 });
 
 
