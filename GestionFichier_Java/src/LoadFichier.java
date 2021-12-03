@@ -5,12 +5,8 @@ import java.util.ArrayList;
 import java.util.PriorityQueue;
 
 import javax.imageio.ImageIO;
-import javax.swing.JPanel;
 
 public class LoadFichier {
-
-
-
 	PriorityQueue<Fichier> listFichier = new PriorityQueue<>(new FichierComparator());
 
 
@@ -37,12 +33,6 @@ public class LoadFichier {
 
 					}
 				}
-			
-
-			
-
-
-
 			return listF;
 		}
 	public void loadIco(File f) throws IOException{

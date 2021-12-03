@@ -12,8 +12,6 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.filechooser.FileSystemView;
 
-
-
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.attribute.BasicFileAttributes;
@@ -40,7 +38,7 @@ public class Fichier {
 		this.isFav=false;
 		this.note=0;
 		this.hCode=f.hashCode();
-		
+
 	}
 
 
@@ -63,10 +61,6 @@ public class Fichier {
 	    return bimage;
 	}
 
-	public Date getDate() {
-		return this.dateLOpened;
-	}
-
 	public int getNote() {
 		return this.note;
 	}
@@ -83,9 +77,6 @@ public class Fichier {
 	public Date getLastAcces(File f) throws IOException {
 		 BasicFileAttributes attrs = Files.readAttributes(f.toPath(), BasicFileAttributes.class);
 		 return new Date(attrs.lastAccessTime().toMillis());
-
-
-
 
 	}
 	public String getTypeFile(String fileName) {
