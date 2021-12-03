@@ -8,12 +8,24 @@
   .Menu_Vectical li {
     padding: 0.5vw !important;
   }
+  
+  header {
+    background-color: black;
+    background-size: 90vw !important;
+    background-position: center !important;
+  }
+  
+  input {
+    right: 5vw !important;
+    top: -1vh !important;
+  }
 }
 
 @media only screen and (max-width: 820px) {
   body {
     background-size: 1000px !important;
   }
+  
 }
 
 * {
