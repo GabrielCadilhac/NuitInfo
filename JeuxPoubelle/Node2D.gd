@@ -4,6 +4,15 @@ var images_path = []
 var score = 0
 
 
+var nouvim = load("closedhand_100189-1.png")
+var imbaz = load("main ouverte.jpg")
+var leftclickpress = false
+# Declare member variables here. Examples:
+# var a = 2
+# var b = "text"
+
+
+
 func random_image():
 	
 	""" Cette fonction permet de récupérer le chemin d'une image dans le projet aléatoirement. (Prototype) """
@@ -74,6 +83,7 @@ func _ready():
 	pos3 = $Sprite3.position
 	pos4 = $Sprite4.position
 	
+	
 
 func verifie():
 	if score == 5:
@@ -96,52 +106,99 @@ var poubelle2 = false
 var poubelle3 = false
 var poubelle4 = false
 var poubelle5 = false
+#wow josian possède vraiment une énorme queue c'est un truc de malade comment elle est grosse.
+#Demande à momo il te diras la même chose  
+
 
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	
+	
+
 	if Input.is_action_just_pressed("click") : 
 		selectedFirstItem = true
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_DRAG)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_MOVE)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_CAN_DROP)
 		
 func _on_Area2D_input_event2(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click") : 
 		selectedItem2 = true
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_DRAG)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_MOVE)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_CAN_DROP)
 		
 func _on_Area2D_input_event3(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click") : 
 		selectedItem3 = true
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_DRAG)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_MOVE)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_CAN_DROP)
 
 func _on_Area2D_input_event4(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click") : 
+		
 		selectedItem4 = true
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_DRAG)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_MOVE)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_CAN_DROP)
 
 
 func _on_Area2D_input_event5(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("click") : 
 		selectedItem5 = true
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_DRAG)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_MOVE)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_CAN_DROP)
 		
 func _physics_process(delta):
 	if selectedFirstItem:
 		$Icon.position = lerp($Icon.position, get_global_mouse_position(),25 * delta)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_DRAG)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_MOVE)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_CAN_DROP)
 	
 	if selectedItem2:
 		$Sprite.position = lerp($Sprite.position, get_global_mouse_position(),25 * delta)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_DRAG)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_MOVE)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_CAN_DROP)
 		
 	if selectedItem3:
 		$Sprite2.position = lerp($Sprite2.position, get_global_mouse_position(),25 * delta)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_DRAG)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_MOVE)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_CAN_DROP)
 		
 		
 	if selectedItem4:
 		$Sprite3.position = lerp($Sprite3.position, get_global_mouse_position(),25 * delta)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_DRAG)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_MOVE)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_CAN_DROP)
 	
 	if selectedItem5:
 		$Sprite4.position = lerp($Sprite4.position, get_global_mouse_position(),25 * delta)
-		
-	
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_DRAG)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_MOVE)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_CAN_DROP)	
 	
 
 func _input(event):
+	
+	
+	if Input.is_action_pressed("click"):
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_DRAG)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_MOVE)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_CAN_DROP)
+		
+		
 	if event is InputEventMouseButton:
+		
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_DRAG)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_MOVE)
+		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_CAN_DROP)
+			
 		if event.button_index == BUTTON_LEFT and not event.pressed:
 			if(selectedFirstItem == true):
 				if(collisionItem1 or !poubelle1):
@@ -179,6 +236,11 @@ func _input(event):
 					score -= 1
 				selectedItem5 = false
 			verifie()
+		elif event.button_index == BUTTON_LEFT and event.pressed:
+			 Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_DRAG)
+			 Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_MOVE)
+			 Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_CAN_DROP)
+			
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
