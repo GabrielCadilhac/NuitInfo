@@ -17,23 +17,58 @@ body
 .row-justify-content-start
 {
     position : relative;
-    top: 25vh;
-    left: 60vh;
-    text-size-adjust: 10vh;
+    top: 15vh;
+    left: 30vh;
+    font-size: 3vh;
+    height: auto;
+    width: auto;
+    
+}
+
+.Ensemble-fréquent{
+    height: auto;
+    width: 30vw;
+    overflow-y: scroll;
+    overflow-x:hidden;
+    
 }
 
 .row-justify-content-center
 {
     position : relative;
-    top: 50vh;
-    left: 120vh;
+    top: 19vh;
+    left: 55vw;
     text-size-adjust: 10vh;
-}
+    width: 20vw;
+    font-size: 3vh;
 
+}
+.Ensemble-moyen{
+
+    overflow-y: scroll;
+    overflow-x:hidden;
+    height: auto;
+    width: auto;
+}
 .row-align-items-end
 {
     position : relative;
-    top: 70vh;
-    left: 45vh;
-    text-size-adjust: 10vh;
+    width: 10vw;
+    font-size: 3vh;
+    top: 0vh;
+    left: 20vw;
+}
+.Ensemble-petit{
+    overflow-y: scroll;
+    overflow-x:hidden;
+    width: auto;
+    height: 20vh;
+}
+.fichier:hover{
+cursor: pointer;
+
+}
+.fichier{
+    padding: 3px;
+    margin: 5px;
 }

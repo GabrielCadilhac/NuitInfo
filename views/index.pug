@@ -11,13 +11,32 @@ html(lang=fr)
 
 div.container
     div(class = "row-justify-content-start")
-        div(class = "col-4 bg-primary")
+        div(class = "Ensemble-fréquent col-4 container")
+            
             t Ensemble fréquent
+            div(class="row row-cols-4")
+             each fichier in ListeFile
+                div(class="fichier col border border-primary")
+                    img(src="/views/image.svg") 
+                    
+                    p #{fichier.nom}
+
+           
     div(class = "row-justify-content-center")
-        div(class = "col-4 bg-primary")
+        div(class = "Ensemble-moyen col-4 container")
             t Ensemble moyen
+            div(class="row row-cols-4")
+             each fichier in ListeFile
+                div(class="fichier col border border-primary")
+                    img(src="/views/image.svg") 
+                    
+                    p #{fichier.nom}
     div(class = "row-align-items-end")
-        div(class = "col-4 bg-primary")
-            t ensemble peu
-    each fichier in ListeFile
-        p #{fichier.nom}
+        div(class = "Ensemble-petit col-4 container")
+            t Ensemble petit
+            div(class="row row-cols-2")
+             each fichier in ListeFile
+                div(class="fichier col border border-primary")
+                    img(src="/views/image.svg") 
+                    p #{fichier.nom}
+    
