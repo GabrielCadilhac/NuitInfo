@@ -25,6 +25,20 @@ app.post("/sauveteurs", function(req, res) {
     });
 });
 
+app.post("/search", function(req, res)
+{
+    MongoClient.connect(url_db, function(err, db)
+    {
+        var dbo = db.db("sauveteurs");
+        dbo.collection("sauveteurs").find({}).toArray(function(err, result)
+        {
+            res.send(result);
+            res.end();
+            db.close();
+        });
+    });
+});
+
 
 app.get("/testbdd", function(req, res) {
     MongoClient.connect(url_db, function(err, db)
