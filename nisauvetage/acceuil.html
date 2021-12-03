@@ -76,8 +76,11 @@
             </div>
           </div>
 
-          <div v-show="">
-
+          <div v-show="onglet=='Find'">
+            <div v-for="i in answer">
+              <p>{{ i }}</p>
+              <br>
+            </div>
           </div>
 
         </div>
