@@ -50,17 +50,28 @@ fs.readdir(Folder, (err, files) => {
 
 }
 //parcourDossier(Folder);
-console.log("liste avant tir-> ",ListeFile);
+//console.log("liste avant tir-> ",ListeFile);
 ListeFile.sort(function (a, b) {
     return a.nbAcces - b.nbAcces;
   });
-console.log("liste apres tir-> ",ListeFile);
+//console.log("liste apres tir-> ",ListeFile);
+console.log(ListeFile.lenght);
+
+var L1=ListeFile.slice(0,ListeFile.length/3);
+var L2=ListeFile.slice(ListeFile.length/3,(ListeFile.length/3)*2);
+var L3=ListeFile.slice((ListeFile.length/3)*2);
+
+console.log("Liste L1 -> ",L1);
+console.log("Liste L2 -> ",L2);
+console.log("Liste L3 -> ",L3);
+
+var Data={"L1":L1,"L2":L2,"L3":L3}
 
 var data=JSON.stringify(ListeFile)
 fs.writeFileSync('Liste.json', data)
 
-
-server.listen(80, function()
+//process.env.PORT, process.env.IP,
+server.listen(process.env.PORT, process.env.IP, function()
 {
         
         console.log("Serveur démarré");
@@ -68,7 +79,7 @@ server.listen(80, function()
         app.get("/", function(req, res) {
             console.log('Chargement !!');
             
-            res.render('index',{ListeFile:ListeFile})
+            res.render('index',{Data:Data})
         });
         
         app.use('/views', express.static('views'));

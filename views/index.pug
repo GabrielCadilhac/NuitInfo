@@ -15,8 +15,8 @@ div.container
             
             t Ensemble fréquent
             div(class="row row-cols-4")
-             each fichier in ListeFile
-                div(class="fichier col border border-primary")
+             each fichier in Data.L3
+                div(class="fichier col border border-primary btn btn-outline-primary")
                     img(src="/views/image.svg") 
                     
                     p #{fichier.nom}
@@ -26,8 +26,8 @@ div.container
         div(class = "Ensemble-moyen col-4 container")
             t Ensemble moyen
             div(class="row row-cols-4")
-             each fichier in ListeFile
-                div(class="fichier col border border-primary")
+             each fichier in Data.L2
+                div(class="fichier col border border-primary btn btn-outline-primary")
                     img(src="/views/image.svg") 
                     
                     p #{fichier.nom}
@@ -35,8 +35,8 @@ div.container
         div(class = "Ensemble-petit col-4 container")
             t Ensemble petit
             div(class="row row-cols-2")
-             each fichier in ListeFile
-                div(class="fichier col border border-primary")
+             each fichier in Data.L1
+                div(class="fichier col border border-primary btn btn-outline-primary")
                     img(src="/views/image.svg") 
                     p #{fichier.nom}
     
