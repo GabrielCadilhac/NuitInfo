@@ -10,8 +10,11 @@ func random_image():
 	
 	var rng = RandomNumberGenerator.new()
 	
-	images_path.append("icon.png")
-	images_path.append("image.png")
+	images_path.append("bouteille.png")
+	images_path.append("banane.png")
+	images_path.append("journal.png")
+	images_path.append("carton.png")
+	
 	
 	rng.randomize()
 	var my_random_number = rng.randf_range(0, images_path.size())
@@ -79,6 +82,19 @@ var selectedItem3 =false
 var selectedItem4 =false
 var selectedItem5 =false
 
+var collisionItem1 = false
+var collisionItem2 = false
+var collisionItem3 = false
+var collisionItem4 = false
+var collisionItem5 = false
+
+var poubelle1 = false
+var poubelle2 = false
+var poubelle3 = false
+var poubelle4 = false
+var poubelle5 = false
+
+
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	
 	if Input.is_action_just_pressed("click") : 
@@ -124,27 +140,86 @@ func _physics_process(delta):
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and not event.pressed:
-			selectedFirstItem = false
-			selectedItem2 = false
-			selectedItem3 = false
-			selectedItem4 = false
-			selectedItem5 = false
-			if(selectedFirstItem == false):
-				$Icon.position = pos
-			if(selectedItem2 == false):
-				$Sprite.position = pos1
-			if(selectedItem3 == false):
-				$Sprite2.position = pos2
-			if(selectedItem4 == false):
-				$Sprite3.position = pos3
-			if(selectedItem5 == false):
-				$Sprite4.position = pos4
+			if(selectedFirstItem == true):
+				if(collisionItem1 or !poubelle1):
+					$Icon.position = pos
+					collisionItem1 = false
+				selectedFirstItem = false
+				
+			if(selectedItem2 == true ):
+				if(collisionItem2 or !poubelle2):
+					$Sprite.position = pos1
+					collisionItem2 = false
+				selectedItem2 = false
+				
+			if(selectedItem3 == true):
+				if(collisionItem3 or !poubelle3):
+					$Sprite2.position = pos2
+					collisionItem3 = false
+				selectedItem3 = false
+				
+			if(selectedItem4 == true):
+				if(collisionItem4 or !poubelle4):
+					$Sprite3.position = pos3
+					collisionItem4 = false
+				selectedItem4 = false
+				
+			if(selectedItem5 == true):
+				if(collisionItem5 or !poubelle5):
+					$Sprite4.position = pos4
+					collisionItem5 = false
+				selectedItem5 = false
+				
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+func _on_Area2D_area_entered(area):
+	if (area == $Sprite4/Area2D and selectedItem5):
+		collisionItem5 = true
+	if (area == $Sprite3/Area2D and selectedItem4):
+		collisionItem4 = true
+	if (area == $Sprite2/Area2D and selectedItem3):
+		collisionItem3 = true
+	if (area == $Sprite/Area2D and selectedItem2):
+		collisionItem2 = true
+	if (area == $Icon/Area2D and selectedFirstItem):
+		collisionItem1 = true
+		
+func _on_Area2D_area_exited(area):
+	if (area == $Sprite4/Area2D and selectedItem5):
+		collisionItem5 = false
+	if (area == $Sprite3/Area2D and selectedItem4):
+		collisionItem4 = false
+	if (area == $Sprite2/Area2D and selectedItem3):
+		collisionItem3 = false
+	if (area == $Sprite/Area2D and selectedItem2):
+		collisionItem2 = false
+	if (area == $Icon/Area2D and selectedFirstItem):
+		collisionItem1 = false
+		
+func _on_POUBELLE_area_entered(area):
+	if (area == $Sprite4/Area2D and selectedItem5):
+		poubelle5 = true
+	if (area == $Sprite3/Area2D and selectedItem4):
+		poubelle4 = true
+	if (area == $Sprite2/Area2D and selectedItem3):
+		poubelle3 = true
+	if (area == $Sprite/Area2D and selectedItem2):
+		poubelle2 = true
+	if (area == $Icon/Area2D and selectedFirstItem):
+		poubelle1 = true
 
-
-
+func _on_POUBELLE_area_exited(area):
+	if (area == $Sprite4/Area2D and selectedItem5):
+		poubelle5 = false
+	if (area == $Sprite3/Area2D and selectedItem4):
+		poubelle4 = false
+	if (area == $Sprite2/Area2D and selectedItem3):
+		poubelle3 = false
+	if (area == $Sprite/Area2D and selectedItem2):
+		poubelle2 = false
+	if (area == $Icon/Area2D and selectedFirstItem):
+		poubelle1 = false
 
 
 
