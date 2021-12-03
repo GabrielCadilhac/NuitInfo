@@ -3,6 +3,18 @@
   --nav-width: 20vw;
   --header-height: 15vh;
 }
+/*
+@media only screen and (min-width: 1100px) {
+  header {
+    height: 800;
+  }
+}
+*/
+@media only screen and (max-width: 600px) {
+  header {
+    height: 800px;
+  }
+}
 
 * {
   margin: 0px;
