@@ -11,6 +11,20 @@ app.get("/", function(req, res) {
     res.sendFile(__dirname + "/index.html");
 });
 
+
+app.get("/sauveteurs", function(req, res) {
+    MongoClient.connect(url_db, function(err, db)
+    {
+        console.log(req.xhr);
+        var dbo = db.db("sauveteurs");
+        dbo.collection("sauveteurs").find({}).toArray(function(err, result)
+        {
+            db.close();
+        });
+    });
+});
+
+
 app.get("/testbdd", function(req, res) {
     MongoClient.connect(url_db, function(err, db)
     {
