@@ -39,7 +39,9 @@ app.get("/testbdd", function(req, res) {
     res.end();
 });
 
-app.use("public", express.static("public"));
+app.use("css", express.static("css"));
+app.use("img", express.static("img"));
+app.use("js", express.static("js"));
 
 server.listen(process.env.PORT || 8080, function()
 {
