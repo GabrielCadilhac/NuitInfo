@@ -30,7 +30,9 @@
           <h2>Membres fondateurs de la Société Humaine de Dunkerque</h2><br>
 
           <div id="pierre_tombal">
-            <p v-for:"i in answer">{{ i.nom }}</p>
+            <div v-for:"i in answer">
+              <p>{{ i.nom }}</p>
+            </div>
           </div>
         </div>
 
