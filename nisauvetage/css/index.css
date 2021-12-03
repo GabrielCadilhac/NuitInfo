@@ -51,16 +51,17 @@ nav {
  position: relative;
  background-color: rgba(255,255,255,0.5);
  margin-left: calc(2vw + var(--nav-width));
- margin-bottom: calc(var(--header-height)/2);
+ margin-bottom: calc(-1.95vh + var(--header-height)/2);
  padding: 5%;
  border-radius: 10px;
  top: calc(-5vh + var(--header-height)/2);
 }
 
 footer {
-  width: 100vw;
+  width: 96vw;
   height: calc(30vh - var(--header-height));
-  background-color: blue;
-  bottom: 0px;
+  background-color: rgba(255,255,255,0.5);
+  bottom: 6px;
+  left: 1vw;
   position: relative;
 }
