@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://arriereplan1.png" type="Texture" id=1]
 [ext_resource path="res://Capture.PNG" type="Texture" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Quitter.gd" type="Script" id=7]
 [ext_resource path="res://quitter.PNG" type="Texture" id=8]
 [ext_resource path="res://coupe.png" type="Texture" id=9]
+[ext_resource path="res://Capture d’écran 2021-12-03 à 06.32.46.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 74.2077, 24 )
@@ -47,7 +48,6 @@ script = ExtResource( 7 )
 [node name="Area2D" type="Area2D" parent="Quitter"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Quitter/Area2D"]
-scale = Vector2( 1, 1 )
 shape = SubResource( 2 )
 
 [node name="Continuer" type="Sprite" parent="."]
@@ -59,13 +59,17 @@ texture = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Continuer/Area2D"]
 position = Vector2( 2.90552, 1.89749 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="Coupe" type="Sprite" parent="."]
 position = Vector2( 391, 204 )
 scale = Vector2( 0.352871, 0.264523 )
 texture = ExtResource( 9 )
+
+[node name="CaptureD’écran2021-12-03À063246" type="Sprite" parent="."]
+position = Vector2( 313, 251 )
+scale = Vector2( 0.20339, 0.275863 )
+texture = ExtResource( 10 )
 
 [connection signal="input_event" from="Quitter/Area2D" to="Quitter" method="_on_Area2D_input_event"]
 [connection signal="input_event" from="Continuer/Area2D" to="." method="_on_Area2D_input_event"]
