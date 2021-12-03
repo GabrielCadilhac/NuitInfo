@@ -8,9 +8,16 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -33,36 +40,42 @@ public class TestJavaFX extends Application {
 		int compteur = 0;
 		int fichiersParLigne = 2;
 		HBox currentHBox = new HBox();
+		currentHBox.setAlignment(Pos.CENTER);
 		
 		for (Fichier f : listeFichiers) {
-			System.out.println(f.nomF+" "+f.note);
 			if (compteur == fichiersParLigne) {
 				mainVBox.getChildren().add(currentHBox);
 				currentHBox = new HBox();
+				currentHBox.setAlignment(Pos.CENTER);
+				compteur = 0;
 			}
+			
 			Button currentButton = new Button("Bouton "+f.nomF);
-
 			currentButton.setOnAction(new EventHandler<ActionEvent>() {
 
 				@Override
 				public void handle(ActionEvent e) {
 					f.note++;
 					listeFichiers.remove(f);
-					System.out.println(listeFichiers);
 					listeFichiers.add(f);
-					System.out.println(listeFichiers);
 					mainVBox.getChildren().clear();
-					
 					drawButton(listeFichiers, mainVBox);
 
 				}
 			});
+			Image currentImage = new Image("D:\\NUIT DE LINFO\\IMG\\"+f.type+".png");
+			ImageView view = new ImageView(currentImage);
+			double taille = 32;
+			view.setFitWidth(taille);
+			view.setFitHeight(taille);
+			VBox buttonBox = new VBox();
+			buttonBox.setAlignment(Pos.CENTER);
+			buttonBox.getChildren().addAll(view,currentButton);
 			
-			currentHBox.getChildren().add(currentButton);/////////////////////////////
+			currentHBox.getChildren().add(buttonBox);
 			compteur++;
 		}
 		mainVBox.getChildren().add(currentHBox);
-		System.out.println("######################");
 	}
 
 	@Override
