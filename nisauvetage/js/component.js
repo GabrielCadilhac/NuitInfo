@@ -15,8 +15,8 @@ Vue.component("nav-menu", {
   template: `
     <nav class="Menu_Vectical">
         <ul>
-            <li>Acceuil</li>
-            <li>Sauveteurs</li>
+            <li id="Home">Acceuil</li>
+            <li id="sauveteur">Sauveteurs</li>
             <li>Historique des sortier</li> <!-- Sorties en mer -->
             <li>Stations</li> <!-- Peut-être change de noms / fusionnner avec Services du ports  -->
             <li>Services du port</li>
