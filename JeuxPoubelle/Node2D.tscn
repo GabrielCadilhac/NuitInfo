@@ -1,12 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Node2D.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://unknown.png" type="Texture" id=3]
 [ext_resource path="res://Quitter.gd" type="Script" id=4]
 [ext_resource path="res://quitter.PNG" type="Texture" id=5]
-[ext_resource path="res://Win.gd" type="Script" id=6]
-[ext_resource path="res://win.PNG" type="Texture" id=7]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 35.0
@@ -19,9 +17,6 @@ radius = 35.0
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 75, 24 )
-
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 337.073, 140.927 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -86,18 +81,6 @@ script = ExtResource( 4 )
 position = Vector2( -1, 1 )
 shape = SubResource( 4 )
 
-[node name="Win" type="Sprite" parent="."]
-position = Vector2( 699.625, 532 )
-scale = Vector2( 0.218053, 0.120629 )
-texture = ExtResource( 7 )
-script = ExtResource( 6 )
-
-[node name="Area2D" type="Area2D" parent="Win"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Win/Area2D"]
-position = Vector2( -0.57373, -0.000976563 )
-shape = SubResource( 5 )
-
 [node name="POUBELLE" type="Area2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="POUBELLE"]
@@ -119,6 +102,5 @@ polygon = PoolVector2Array( 370, 472, 339, 163, 379, 86, 495, 81, 543, 185, 547,
 [connection signal="area_exited" from="Sprite4/Area2D" to="." method="_on_Area2D_area_exited"]
 [connection signal="input_event" from="Sprite4/Area2D" to="." method="_on_Area2D_input_event5"]
 [connection signal="input_event" from="Quitter/Area2D" to="Quitter" method="_on_Area2D_input_event"]
-[connection signal="input_event" from="Win/Area2D" to="Win" method="_on_Area2D_input_event"]
 [connection signal="area_entered" from="POUBELLE" to="." method="_on_POUBELLE_area_entered"]
 [connection signal="area_exited" from="POUBELLE" to="." method="_on_POUBELLE_area_exited"]
