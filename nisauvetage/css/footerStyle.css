@@ -1,14 +1,44 @@
 /*footer*/
 
-footer * {
+footer {
+    text-align: center;
     height: 15vh;
 }
 
-/*taille de l'image de facebook*/
-.icon img{
-    height: 8vh;
+/*taille des images*/
+.box_flex {
+    display: inline-block; 
 }
 
-.texte_facebook{
-    font-family:cursive;
+.box{
+    padding:1vw;
+    margin-left: auto;
+    display: inline-grid;
+}
+
+.box > img {
+    margin: auto;
+    height: 7vh;
+}
+
+.box > a {
+    margin: auto;
+    font-family: cursive;
+    font-size: 1.1em;
+}
+
+.bouton{
+    display: inline-block;
+    background: aqua;
+    border: 2px solid;
+    border-color: #424242;
+    padding: 1em;
+    margin-top: 1em;
+    border-radius: 50px;
+
+    transition: all 0.2s;
+}
+
+.bouton:hover{
+    border-radius: 20px;
 }
