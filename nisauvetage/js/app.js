@@ -10,7 +10,8 @@ var app = new Vue({
 
       xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
-          answere = xhr.response;
+          answer = xhr.response;
+          console.log(xhr.response);
         }
       }
 
