@@ -28,7 +28,7 @@ app.post("/sauveteurs", function(req, res) {
 
 app.post("/search", function(req, res)
 {
-    query = JSON.parse(req.query)["search"];
+    query = req.query;
     console.log("query:", query);
     MongoClient.connect(url_db, function(err, db)
     {
