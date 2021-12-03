@@ -3,16 +3,16 @@
   --nav-width: 20vw;
   --header-height: 15vh;
 }
-/*
+
 @media only screen and (min-width: 1100px) {
-  header {
-    height: 800;
+  .Menu_Vectical li {
+    padding: 0.5vw !important;
   }
 }
-*/
-@media only screen and (max-width: 600px) {
-  header {
-    height: 800px;
+
+@media only screen and (max-width: 820px) {
+  body {
+    background-size: 1000px !important;
   }
 }
 
@@ -51,7 +51,7 @@ header * {
 
 nav {
   width: var(--nav-width);
-  height: calc(92vh - 2* var(--header-height));
+  height: calc(92vh - 3* var(--header-height));
   margin-top: 2vh;
   margin-left: 1vw;
   position: fixed;
