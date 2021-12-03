@@ -6,7 +6,7 @@
 }
 
 
-.Menu_Vectical a {
+.Menu_Vectical li{
     background-color: rgba(255, 255, 255, 0.5);
     color: black; /*Couleur du texte*/
     display: block;
@@ -17,11 +17,11 @@
     list-style: none;
 }
 
-.Menu_Vectical a:hover {
+.Menu_Vectical li:hover {
     background-color: rgba(150, 150, 255, 0.5);
 }
 
-.Menu_Vectical a.Accueil {
+.Menu_Vectical li.Accueil {
     background-color: rgb(92, 250, 92);
     color: black;
 }

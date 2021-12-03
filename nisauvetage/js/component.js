@@ -15,15 +15,15 @@ Vue.component("nav-menu", {
   template: `
     <nav class="Menu_Vectical">
         <ul>
-            <li><a href="#" class="Accueil">Acceuil</a></li>
-            <li><a href="" v-on:cick="onglet='Acceuil'">Sauveteurs</a></li>
-            <li><a href="">Historique des sortier</a></li> <!-- Sorties en mer -->
-            <li><a href="">Stations</a></li> <!-- Peut-être change de noms / fusionnner avec Services du ports  -->
-            <li><a href="">Services du port</a></li>
-            <li><a href="">Equipement</a></li> <!-- A changer peut-être -->
-            <li><a href="">Techniques</a></li>
-            <li><a href="">Histoire</a></li> <!-- Estaminte -> Anecdote (devient un menu dans la page Histoire)-->
-            <li><a href="">Autre</a></li> <!-- Compléments  -->
+            <li>Acceuil</li>
+            <li>Sauveteurs</li>
+            <li>Historique des sortier</li> <!-- Sorties en mer -->
+            <li>Stations</li> <!-- Peut-être change de noms / fusionnner avec Services du ports  -->
+            <li>Services du port</li>
+            <li>Equipement</li> <!-- A changer peut-être -->
+            <li>Techniques</li>
+            <li>Histoire</li> <!-- Estaminte -> Anecdote (devient un menu dans la page Histoire)-->
+            <li>Autre</li> <!-- Compléments  -->
         </ul>
     </nav>
   `
