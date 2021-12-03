@@ -4,11 +4,17 @@
     <meta charset="utf-8">
     <title>Accueil - Sauveteur</title>
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="/css/vuesax.css">
+    <link rel="stylesheet" href="css/vuesax.css">
+    <link rel="stylesheet" href="css/MenusStyle.css">
+    <link rel="icon" href="https://sauveteurdudunkerquois.fr/wp-content/uploads/2021/08/cropped-cropped-cropped-cropped-logo-32x32.png" sizes="any">
   </head>
   <body>
     <div id="app">
-      <header-menu></header-menu>
+
+      <header-menu bind:value_recherche="value_recherche">
+      </header-menu>
+
+
       <div id="align">
         <nav-menu></nav-menu>
         <div id="corp">

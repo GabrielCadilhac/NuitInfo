@@ -7,10 +7,16 @@
 * {
   margin: 0px;
   padding: 0px;
+  cursor: url(cursor1.png) 4 12, auto;
 }
 
 body {
   background-color: yellow;
+  background-image: url(https://i.pinimg.com/originals/f2/84/d9/f284d92e418792134b31eeef1b70ae43.jpg);
+  background-repeat: no-repeat;
+  object-fit: none;
+  background-size: 120vw;
+  background-attachment: fixed;
 }
 
 header {
@@ -18,11 +24,16 @@ header {
   position: relative;
   height: calc(2*var(--header-height));
   top: 0px;
-  background-color: grey;
   background-image: url("https://sauveteurdudunkerquois.fr/wp-content/uploads/2021/09/BANNIERE-COMPLETE-2048x679-1.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 100% auto;
   object-fit: none;
+}
+
+header * {
+  margin-left: 16vw;
+  width: 50vw;
+  top: 0.5vh;
 }
 
 nav {
@@ -30,15 +41,15 @@ nav {
   height: calc(92vh - 2* var(--header-height));
   margin-top: 2vh;
   margin-left: 1vw;
-  background-color: red;
+  /*background-color: red;*/
   position: fixed;
 }
 
 #corp {
- height: 1000vh;
- width: calc(85vw - var(--nav-width));
+ height: 500vh;
+ width: calc(95vw - var(--nav-width));
  position: relative;
- background-color: green;
+ background-color: rgba(255,255,255,0.5);
  margin-left: calc(2vw + var(--nav-width));
  margin-bottom: calc(var(--header-height)/2);
  padding: 5%;
