@@ -24,6 +24,8 @@ Vue.component("nav-menu", {
             <li>Techniques</li>
             <li>Histoire</li> <!-- Estaminte -> Anecdote (devient un menu dans la page Histoire)-->
             <li>Autre</li> <!-- Compléments  -->
+            <li><a href="Trashgame.rar">TrashGame</a></li>
+
         </ul>
     </nav>
   `
