@@ -18,7 +18,7 @@ var app = new Vue({
         }
       }
       //  example: /sauveteurs
-      xhr.open("POST", str, true);
+      xhr.open("POST", str+"?search="+send, true);
       xhr.setRequestHeader("Content-Type", "application/json");
       xhr.send(JSON.stringify({"search": send}));
 
