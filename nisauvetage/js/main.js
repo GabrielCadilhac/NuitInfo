@@ -12,6 +12,6 @@ document.getElementById("sauveteur").addEventListener("click", () => {
 document.querySelector("input").addEventListener("keyup", e => {
   if (e.keyCode == 13) {
     console.log(app.value_recherche);
-    app.get_data("/search", app.value_recherche);
+    app.get_data("/search", document.querySelector("input").value);
   }
 });
