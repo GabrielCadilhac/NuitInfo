@@ -27,6 +27,7 @@ app.post("/sauveteurs", function(req, res) {
 
 app.post("/search", function(req, res)
 {
+    console.log(req.body);
     MongoClient.connect(url_db, function(err, db)
     {
         var dbo = db.db("sauveteurs");
