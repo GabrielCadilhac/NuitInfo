@@ -1,0 +1,29 @@
+/*Couleur à changer*/
+
+
+.Menu_Vectical {
+    width: 20vw; /*Largueur de menus*/
+}
+
+
+.Menu_Vectical li{
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black; /*Couleur du texte*/
+    display: block;
+    padding: 0.75vw;
+}
+
+.Menu_Vectical ul {
+    list-style: none;
+}
+
+.Menu_Vectical li:hover {
+    background-color: rgba(150, 150, 255, 0.5);
+}
+
+.Menu_Vectical li.Accueil {
+    background-color: rgb(92, 250, 92);
+    color: black;
+}
+
+/*Footer*/
