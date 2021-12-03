@@ -28,15 +28,15 @@ app.post("/sauveteurs", function(req, res) {
 
 app.post("/search", function(req, res)
 {
-    console.log(req.query);
+    query = req.query;
     MongoClient.connect(url_db, function(err, db)
     {
         var dbo = db.db("sauveteurs");
-        dbo.collection("sauveteurs").find({}).toArray(function(err, result)
+        dbo.collection("sauveteurs").find({"nom": query}).toArray(function(err, result)
         {
-            dbo.collection("sauvetages").find({}).toArray(function(err, result1)
+            dbo.collection("sauvetages").find({"date": query}).toArray(function(err, result1)
             {
-                dbo.collection("bateaux").find({}).toArray(function(err, result2)
+                dbo.collection("bateaux").find({"nom": query}).toArray(function(err, result2)
                 {
                     res.send(result.concat(result1).concat(result2));
                     res.end();
