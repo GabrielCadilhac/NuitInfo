@@ -71,7 +71,7 @@ var data=JSON.stringify(ListeFile)
 fs.writeFileSync('Liste.json', data)
 
 //process.env.PORT, process.env.IP,
-server.listen(process.env.PORT, process.env.IP, function()
+server.listen(80, function()
 {
         
         console.log("Serveur démarré");

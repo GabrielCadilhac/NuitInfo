@@ -12,31 +12,27 @@ html(lang=fr)
 div.container
     div(class = "row-justify-content-start")
         div(class = "Ensemble-fréquent col-4 container")
-            
-            t Ensemble fréquent
             div(class="row row-cols-4")
              each fichier in Data.L3
                 div(class="fichier col border border-primary btn btn-outline-primary")
                     img(src="/views/image.svg") 
                     
-                    p #{fichier.nom}
+                    p.texte #{fichier.nom}
 
            
     div(class = "row-justify-content-center")
         div(class = "Ensemble-moyen col-4 container")
-            t Ensemble moyen
             div(class="row row-cols-4")
              each fichier in Data.L2
                 div(class="fichier col border border-primary btn btn-outline-primary")
                     img(src="/views/image.svg") 
                     
-                    p #{fichier.nom}
+                    p.texte #{fichier.nom}
     div(class = "row-align-items-end")
         div(class = "Ensemble-petit col-4 container")
-            t Ensemble petit
             div(class="row row-cols-2")
              each fichier in Data.L1
                 div(class="fichier col border border-primary btn btn-outline-primary")
                     img(src="/views/image.svg") 
-                    p #{fichier.nom}
+                    p.texte #{fichier.nom}
     

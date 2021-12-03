@@ -4,30 +4,32 @@ body
     background-repeat: no-repeat;
     background-size: contain;
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
 }
 
 .container
 {
     position : relative;
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
 }
 
 .row-justify-content-start
 {
     position : relative;
-    top: 15vh;
-    left: 30vh;
+    top: 22vh;
+    left: 10vw;
     font-size: 3vh;
     height: auto;
-    width: auto;
+    width: 15vw;
     
 }
 
 .Ensemble-fréquent{
     height: auto;
-    width: 30vw;
+    left: 10vw;
+    height: 23vh;
+    width: 25vw;
     overflow-y: scroll;
     overflow-x:hidden;
     
@@ -36,10 +38,11 @@ body
 .row-justify-content-center
 {
     position : relative;
-    top: 19vh;
-    left: 55vw;
+    top: 30vh;
+    left: 50vw;
     text-size-adjust: 10vh;
     width: 20vw;
+    height: 20vh;
     font-size: 3vh;
 
 }
@@ -55,20 +58,76 @@ body
     position : relative;
     width: 10vw;
     font-size: 3vh;
-    top: 0vh;
-    left: 20vw;
+    top: 28vh;
+    left: 14vw;
 }
 .Ensemble-petit{
     overflow-y: scroll;
     overflow-x:hidden;
     width: auto;
-    height: 20vh;
+    height: 15vh;
 }
 .fichier:hover{
 cursor: pointer;
 
 }
 .fichier{
-    padding: 3px;
-    margin: 5px;
+    padding: 5px;
+    margin: 3px;
+    height: 11vh;
+    top: 25vh;
 }
+
+img
+{
+    height: 7vh;
+    width: 7vw;
+    align-items: center;
+}
+
+
+
+.Ensemble-fréquent::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+.Ensemble-fréquent::-webkit-scrollbar-track {
+    background: rgb(57, 173, 4);
+    border-radius: 20px;
+  }
+  
+.Ensemble-fréquent::-webkit-scrollbar-thumb {
+    background-color: rgb(19, 95, 0);
+    border-radius: 20px;
+    border: 3px solid rgb(1, 75, 6);
+  }
+
+  .Ensemble-moyen::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+.Ensemble-moyen::-webkit-scrollbar-track {
+    background: rgb(57, 173, 4);
+    border-radius: 20px;
+  }
+  
+.Ensemble-moyen::-webkit-scrollbar-thumb {
+    background-color: rgb(19, 95, 0);
+    border-radius: 20px;
+    border: 3px solid rgb(1, 75, 6);
+  }
+
+  .Ensemble-petit::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+.Ensemble-petit::-webkit-scrollbar-track {
+    background: rgb(57, 173, 4);
+    border-radius: 20px;
+  }
+  
+.Ensemble-petit::-webkit-scrollbar-thumb {
+    background-color: rgb(19, 95, 0);
+    border-radius: 20px;
+    border: 3px solid rgb(1, 75, 6);
+  }
