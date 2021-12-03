@@ -198,42 +198,66 @@ func _input(event):
 		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_DRAG)
 		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_MOVE)
 		Input.set_custom_mouse_cursor(nouvim, Input.CURSOR_CAN_DROP)
-			
 		if event.button_index == BUTTON_LEFT and not event.pressed:
 			if(selectedFirstItem == true):
-				if(collisionItem1 or !poubelle1):
+				if(collisionItem1):
 					$Icon.position = pos
 					collisionItem1 = false
 					score -= 1
+				if (!poubelle1):
+					$Icon.position = pos
+					collisionItem1 = false
+				else:
+					score += 1
 				selectedFirstItem = false
 				
 				
 			if(selectedItem2 == true ):
-				if(collisionItem2 or !poubelle2):
+				if(collisionItem2):
 					$Sprite.position = pos1
 					collisionItem2 = false
 					score -= 1
+				if (!poubelle2):
+					$Sprite.position = pos1
+					collisionItem2 = false
+				else:
+					score += 1
 				selectedItem2 = false
 				
 			if(selectedItem3 == true):
-				if(collisionItem3 or !poubelle3):
+				if(collisionItem3):
 					$Sprite2.position = pos2
-					score -= 1
 					collisionItem3 = false
+					score -= 1
+				if (!poubelle3):
+					$Sprite2.position = pos2
+					collisionItem3 = false
+				else:
+					score += 1
 				selectedItem3 = false
 				
 			if(selectedItem4 == true):
-				if(collisionItem4 or !poubelle4):
+				if(collisionItem4):
 					$Sprite3.position = pos3
 					collisionItem4 = false
 					score -= 1
+				if (!poubelle4):
+					$Sprite3.position = pos3
+					collisionItem4 = false
+				else:
+					score+=1
 				selectedItem4 = false
 				
 			if(selectedItem5 == true):
-				if(collisionItem5 or !poubelle5):
+				if(collisionItem5):
 					$Sprite4.position = pos4
 					collisionItem5 = false
 					score -= 1
+				if (!poubelle5):
+					$Sprite4.position = pos4
+					collisionItem5 = false 
+				else:
+					score+=1
 				selectedItem5 = false
 			verifie()
 		elif event.button_index == BUTTON_LEFT and event.pressed:
@@ -272,39 +296,38 @@ func _on_Area2D_area_exited(area):
 		
 func _on_POUBELLE_area_entered(area):
 	if (area == $Sprite4/Area2D and selectedItem5):
-		score += 1
+
 		poubelle5 = true
 	if (area == $Sprite3/Area2D and selectedItem4):
 		poubelle4 = true
-		score += 1
+
 	if (area == $Sprite2/Area2D and selectedItem3):
 		poubelle3 = true
-		score += 1
+
 	if (area == $Sprite/Area2D and selectedItem2):
 		poubelle2 = true
-		score += 1
+
 	if (area == $Icon/Area2D and selectedFirstItem):
 		poubelle1 = true
-		score += 1
 		
 	
 
 func _on_POUBELLE_area_exited(area):
 	if (area == $Sprite4/Area2D and selectedItem5):
 		poubelle5 = false
-		score -= 1
+
 	if (area == $Sprite3/Area2D and selectedItem4):
 		poubelle4 = false
-		score -= 1
+
 	if (area == $Sprite2/Area2D and selectedItem3):
 		poubelle3 = false
-		score -= 1
+
 	if (area == $Sprite/Area2D and selectedItem2):
 		poubelle2 = false
-		score -= 1
+
 	if (area == $Icon/Area2D and selectedFirstItem):
 		poubelle1 = false
-		score -= 1
+
 
 
 
