@@ -86,7 +86,7 @@ func _ready():
 	
 
 func verifie():
-	if score == 5:
+	if poubelle1 and poubelle2 and poubelle3 and poubelle4 and poubelle5:
 		get_tree().change_scene("res://victoire.tscn")
 	
 var selectedFirstItem= false
@@ -203,10 +203,11 @@ func _input(event):
 				if(collisionItem1):
 					$Icon.position = pos
 					collisionItem1 = false
-					score -= 1
+					
 				if (!poubelle1):
 					$Icon.position = pos
 					collisionItem1 = false
+					score -= 1
 				else:
 					score += 1
 				selectedFirstItem = false
@@ -216,10 +217,11 @@ func _input(event):
 				if(collisionItem2):
 					$Sprite.position = pos1
 					collisionItem2 = false
-					score -= 1
+					
 				if (!poubelle2):
 					$Sprite.position = pos1
 					collisionItem2 = false
+					score -= 1
 				else:
 					score += 1
 				selectedItem2 = false
@@ -228,10 +230,11 @@ func _input(event):
 				if(collisionItem3):
 					$Sprite2.position = pos2
 					collisionItem3 = false
-					score -= 1
+					
 				if (!poubelle3):
 					$Sprite2.position = pos2
 					collisionItem3 = false
+					score -= 1
 				else:
 					score += 1
 				selectedItem3 = false
@@ -240,10 +243,11 @@ func _input(event):
 				if(collisionItem4):
 					$Sprite3.position = pos3
 					collisionItem4 = false
-					score -= 1
+					
 				if (!poubelle4):
 					$Sprite3.position = pos3
 					collisionItem4 = false
+					score -= 1
 				else:
 					score+=1
 				selectedItem4 = false
@@ -252,10 +256,11 @@ func _input(event):
 				if(collisionItem5):
 					$Sprite4.position = pos4
 					collisionItem5 = false
-					score -= 1
+					
 				if (!poubelle5):
 					$Sprite4.position = pos4
 					collisionItem5 = false 
+					score -= 1
 				else:
 					score+=1
 				selectedItem5 = false
@@ -294,6 +299,7 @@ func _on_Area2D_area_exited(area):
 	if (area == $Icon/Area2D and selectedFirstItem):
 		collisionItem1 = false
 		
+		
 func _on_POUBELLE_area_entered(area):
 	if (area == $Sprite4/Area2D and selectedItem5):
 
@@ -315,6 +321,7 @@ func _on_POUBELLE_area_entered(area):
 func _on_POUBELLE_area_exited(area):
 	if (area == $Sprite4/Area2D and selectedItem5):
 		poubelle5 = false
+		
 
 	if (area == $Sprite3/Area2D and selectedItem4):
 		poubelle4 = false
