@@ -62,7 +62,7 @@ public class TestJavaFX extends Application {
 				}
 			}
 			
-			Button currentButton = new Button("Bouton "+f.nomF);
+			Button currentButton = new Button(f.nomF);
 			currentButton.setOnAction(new EventHandler<ActionEvent>() {
 
 				@Override
