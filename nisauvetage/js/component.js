@@ -11,12 +11,12 @@ Vue.component("header-menu", {
 });
 
 Vue.component("nav-menu", {
-  props: [""],
+  props: ["onglet"],
   template: `
     <nav class="Menu_Vectical">
         <ul>
             <li><a href="#" class="Accueil">Acceuil</a></li>
-            <li><a href="">Sauveteurs</a></li>
+            <li><a href="" v-on:cick="onglet='Acceuil'">Sauveteurs</a></li>
             <li><a href="">Historique des sortier</a></li> <!-- Sorties en mer -->
             <li><a href="">Stations</a></li> <!-- Peut-être change de noms / fusionnner avec Services du ports  -->
             <li><a href="">Services du port</a></li>
@@ -30,10 +30,9 @@ Vue.component("nav-menu", {
 });
 
 Vue.component("footer-menu", {
-  props: [""],
+  props: [],
   template: `
     <footer>
-
         <div class="box_flex">
             <div class="box">
             <img src="img/facebook_icon.png"/>

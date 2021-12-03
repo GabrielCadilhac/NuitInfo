@@ -17,7 +17,7 @@
 
 
       <div id="align">
-        <nav-menu></nav-menu>
+        <nav-menu bind:onglet="onglet"></nav-menu>
         <div id="corp">
 
           <div v-show="onglet=='Acceuil'">
@@ -36,6 +36,45 @@
             </div>
           </div>
 
+          <div v-show="onglet == 'Home'">
+            <div class="texte">
+            <p>
+            Bienvenue sur le site des sauveteurs du dunkerquois. Ce site rend hommage aux femmes,
+            hommes et enfants qui ont réalisé des actes de sauvetages en milieu aquatique.
+            Ces sauveteurs, habitants du dunkerquois (de Bray-Dunes à Grand-Fort-Philippe),
+            ont participé à plus de 900 sauvetages en mer et plus de 1100 sauvetages individuels.
+            Œuvrant avec courage, abnégation et souvent au mépris du risque ils méritent amplement que leurs actes soient pérennisés.
+            </p>
+            </div>
+            <div class="boxgrid">
+                <div class="boxlink">
+                    <div class="box">
+                        <img src="https://sauveteurdudunkerquois.fr/wp-content/uploads/2021/10/Journal-e1634902104276.png"/>
+                        <a href="" class="bouton">1910 Sauvetage du PALMA</a> <!-- ajouter le lien -->
+                    </div>
+
+                    <div class="box">
+                        <img src="https://sauveteurdudunkerquois.fr/wp-content/uploads/2021/10/Semaine-e1634902115510.png"/>
+                        <a href="" class="bouton">Golden sheaf</a> <!-- ajouter le lien -->
+                    </div>
+
+                    <div class="box">
+                        <p class="text_sujet_national">
+                            Votre site SUJET NATIONAL de la nuit de l’info 2021<br>
+                            Organisée par l’IUT de Calais<br>
+                            3650 participants France entière plus deux universités de Tunisie<br>
+                            Reçus avec Alain Ledaguenel par Rémi Synave de l’IUT de Calais<br>
+                            Bon courage aux étudiants qui vont plancher jusqu’au lever du soleil
+                        </p>
+                        <a href="" class="bouton">Sorties du mois de novembre</a> <!-- ajouter le lien -->
+                    </div>
+                </div>
+
+                <div class="imgbox"> <!-- to change mb -->
+                    <img src="https://sauveteurdudunkerquois.fr/wp-content/uploads/2021/12/Sans-titre-1-549x1024.png"/>
+                </div>
+            </div>
+          </div>
         </div>
 
       </div>
