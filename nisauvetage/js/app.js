@@ -10,6 +10,8 @@ var app = new Vue({
 
       xhr.onreadystatechange = function () {
         if (xhr.readyState == 4) {
+          console.log(xhr.response);
+          answer = xhr.response;
           return JSON.parse(xhr.response);
           //example pour /sauveteurs : [{"_id":str  "id":int "nom": str}]
         }
